@@ -8,13 +8,20 @@ import Grid from '@mui/material/Grid';
 import SectionHeading from '../../components/SectionHeading';
 
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
+const ValidationTextField = styled(TextField)({
+  '& input:valid + fieldset': {
+    borderColor: '#E0E3E7',
+    borderWidth: 1,
+  },
+  '& input:invalid + fieldset': {
+    borderColor: 'red',
+    borderWidth: 1,
+  },
+  '& input:valid:focus + fieldset': {
+    borderLeftWidth: 4,
+    padding: '4px !important',
+  },
+});
 
 
 const LogIn = () => {
@@ -30,7 +37,16 @@ const LogIn = () => {
                   <p>How do I get started?</p>
                 </div>
                 <div className='from_main'>
-                  <TextField  id="outlined-basic" label="Email Address" variant="outlined" />
+                  <TextField className='email_inp' id="outlined-basic" label="Email Address" variant="outlined" />
+                  <ValidationTextField
+                    label="Password"
+                    required
+                    variant="outlined"
+                    id="validation-outlined-input"
+                  />
+                </div>
+                <div>
+                  <h4 className='section_devider'>Login with others</h4>
                 </div>
                 <div>
                   <div className="auto_logins">
