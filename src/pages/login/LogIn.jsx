@@ -20,18 +20,29 @@ const Item = styled(Paper)(({ theme }) => ({
 const LogIn = () => {
   return (
     <>
-        {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
+        
         <Box>
           <Grid container>
             <Grid item xs={6}>
               <div className='login_box'>
                 <div className='login_card'>
                   <SectionHeading style="auth_heading" text="Login"/>
-                  <p>How do I get started</p>
+                  <p>How do I get started?</p>
                 </div>
-                <div className='provider_login'>
-                    <img src="public/google.svg" alt="img" />
-                    <span>Login with google</span>
+                <div className='from_main'>
+                  <TextField  id="outlined-basic" label="Email Address" variant="outlined" />
+                </div>
+                <div>
+                  <div className="auto_logins">
+                    <div className='provider_login'>
+                        <img src="public/google.svg" alt="img" />
+                        <span>Login with google</span>
+                    </div>
+                    <div className='provider_login'>
+                        <img src="public/facebook.svg" alt="img" />
+                        <span>Login with Facebook</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Grid>
